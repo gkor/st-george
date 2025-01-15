@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stripe Checkout Sample</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./index.js" defer></script>
+  </head>
+
+  <body>
+    <div class="sr-root">
+      <div class="sr-main">
+        <section class="container">
+          <form action="/create-checkout-session" method="POST">
+          <div>
+            <h1>Cheese Pizza</h1>
+
+            <div class="pasha-image">
+              <img
+                src="https://uc1df2adc9ddf68ec4136ecdb08e.previews.dropboxusercontent.com/p/thumb/ACivgvccOSNQhLhfFrGaE9R0he8xXQngvD2Elsuf2ZCPBxpt5MyWX16vd2zGE6mXDjuVEbVT6nDbW3mgPii3ONb4QnzhDDvz7w4XSOQ7UVyD3Y88TZMa34rNnoWnSh2xXvaTShjFIi7EdPOg-c6e1yfAHXKiXBxXPwoUB_0gQ2QeT_eJOrQdZ75pBGBmPpqW95kUotd78FpFB8_EM3V5In76qvNVDFJtKrtiEReecEKlFwt_CzmLDM4p_RfOzd7Wg5bNOwfkF76PAh8ibilCuCwxysSJX3ypGobrwD0rfpsSx5k5J_NO-RNX8saSyFCntFPfdpxEtgAo_CTu5uTghaJ9HfRBUKWydYYfOFT51c8OSmJd7KMr2z5Ak1JSLJWYQXQ/p.png?is_prewarmed=true"
+                width="300"
+                height="300"
+              />
+            </div>
+          </div>
+
+          <div class="quantity-setter" style="margin-bottom: 75px;">
+            <button id="sub-pizza-1" class="increment-btn" disabled type="button">-</button>
+            <input id="pizza-input-1" type="number" min="0" value="0" name="cheese" />
+            <button id="add-pizza-1" class="increment-btn" type="button">+</button>
+          </div>
+
+          <div>
+            <h1>Pepperoni Pizza</h1>
+
+            <div class="pasha-image">
+              <img
+                src="https://ucee1359b2af26a29d86ec9b32e8.previews.dropboxusercontent.com/p/thumb/AChqlPfjO6ZqgtMPcpZAEVBNnRqc0BzD3K3jQOkQDY6Ri0NWqbVUmqFUYUJBRK8i2U6OdX_-Lb75OQfvqj7UYG4zdx2RUabBluRXe4gZun0VvC6C1oBNrdJdNSI_HuWoWauugpOEZSNVdAnmH6YpwSkImjLWHTWk2RGrA1mCR4V1XKsd1yuRfTokPN2Lz0f1Q0-9d0dJrR0TEfA9-CKGq-ajM_KtfryQUpAAnv_66ASOVxn2T20LJHjHf0NNG0g0s8ZD7fjeBavWjHqPfQw25kOQCvL3kEix1ytuF-T3H3XMmKpujq07BhyshDv8EyHzfbTR-XxFfTv5wyBwgnTwrus2GNgUmRIHpFH31nyaiaPw_4FVkaM0z4fapmWpkwIxwtc/p.png?is_prewarmed=true"
+                width="300"
+                height="300"
+              />
+            </div>
+          </div>
+
+          <div class="quantity-setter" style="margin-bottom: 75px;">
+            <button id="sub-pizza-2" class="increment-btn" disabled type="button">-</button>
+            <input id="pizza-input-2" type="number" min="0" value="0" name="pepperoni" />
+            <button id="add-pizza-2" class="increment-btn" type="button">+</button>
+          </div>
+
+          <div>
+            <h1>Special Pizza</h1>
+
+            <div class="pasha-image">
+              <img
+                src="https://uc1df2adc9ddf68ec4136ecdb08e.previews.dropboxusercontent.com/p/thumb/ACivgvccOSNQhLhfFrGaE9R0he8xXQngvD2Elsuf2ZCPBxpt5MyWX16vd2zGE6mXDjuVEbVT6nDbW3mgPii3ONb4QnzhDDvz7w4XSOQ7UVyD3Y88TZMa34rNnoWnSh2xXvaTShjFIi7EdPOg-c6e1yfAHXKiXBxXPwoUB_0gQ2QeT_eJOrQdZ75pBGBmPpqW95kUotd78FpFB8_EM3V5In76qvNVDFJtKrtiEReecEKlFwt_CzmLDM4p_RfOzd7Wg5bNOwfkF76PAh8ibilCuCwxysSJX3ypGobrwD0rfpsSx5k5J_NO-RNX8saSyFCntFPfdpxEtgAo_CTu5uTghaJ9HfRBUKWydYYfOFT51c8OSmJd7KMr2z5Ak1JSLJWYQXQ/p.png?is_prewarmed=true"
+                width="300"
+                height="300"
+              />
+            </div>
+          </div>
+
+          <div class="quantity-setter" style="margin-bottom: 75px;">
+            <button id="sub-pizza-3" class="increment-btn" disabled type="button">-</button>
+            <input id="pizza-input-3" type="number" min="0" value="0" name="special" />
+            <button id="add-pizza-3" class="increment-btn" type="button">+</button>
+          </div>
+
+
+          <div style="margin-bottom: 75px;">
+            <h1 style="margin-bottom: 25px;">Available Pickup Times</h1>
+            <div id="pizzaTimes"></div>
+          </div>
+
+
+            <h2 id="checkout-warning">Add a pizza and select a time</h2>
+
+            <button type="submit" id="submit" disabled>Order Now</button>
+          </form>
+        </section>
+
+        <div id="error-message"></div>
+      </div>
+    </div>
+  </body>
+</html>
