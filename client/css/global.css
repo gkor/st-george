@@ -36,6 +36,22 @@
   margin-bottom: 50px;
 }
 
+.steps {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  border: 2px solid #000000;
+  border-width: 2px;
+  text-align: center;
+  margin-left: 22px;
+  margin-right: 22px;
+  padding-top: 10px;
+  height: 40px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 50px;
+  
+}
 
 body {
   font-family: var(--body-font-family);
@@ -485,6 +501,7 @@ pre {
   }
 }
 
+
 /* Custom */
 .container {
   border-radius: 6px;
@@ -519,6 +536,10 @@ pre {
 .quantity-setter .increment-btn {
   margin-top: 0;
   border-radius: 0;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
   border: 1px solid var(--accent-color);
 }
 
@@ -552,10 +573,12 @@ input[type=radio] + label {
   border: 2px solid #ddd;
 }
 input[type=radio] + label:hover {
-  border: 2px solid red;
+  border: 2px solid #d02525;
 }
 input[type=radio]:checked + label {
-  border: 2px solid red;
+  border: 2px solid #d02525;
+  background-color: #d02525;
+  color: white;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

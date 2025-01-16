@@ -22,10 +22,8 @@ let pizzaTimes = window.SERVER_DATA.availability;
 
 let toggleCheckout = function () {
   if (TOTAL_PIZZAS > 0 && selectedTime !== "") {
-    document.getElementById("checkout-warning").style.display = "none";
     document.getElementById("submit").disabled = false;
   } else {
-    document.getElementById("checkout-warning").style.display = "block";
     document.getElementById("submit").disabled = true;
   }
 }

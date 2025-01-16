@@ -34,6 +34,9 @@
           <form action="/create-checkout-session" method="POST">
           <div>
             <div class="welcome">Place your takeout order below for <b>Saturday, 1/18</b>. <i>Limit 3 per order.</i> </div>
+
+            <div class="steps"><b>STEP 1</b>: PICK YOUR PIZZA</div>
+
             <h2>CHEESE - $17</h2>
 
             <div class="pasha-image">
@@ -81,22 +84,19 @@
             </div>
           </div>
 
-          <div class="quantity-setter" style="margin-bottom: 75px;">
+          <div class="quantity-setter" style="margin-bottom: 95px;">
             <button id="sub-pizza-3" class="increment-btn" disabled type="button">-</button>
             <input id="pizza-input-3" type="number" min="0" value="0" name="special" class="pizza_input"/>
             <button id="add-pizza-3" class="increment-btn" type="button">+</button>
           </div>
 
+          <div class="steps"><b>STEP 2</b>: CHOOSE YOUR PICKUP</div>
 
-          <div style="margin-bottom: 95px;">
-            <h2 style="margin-bottom: 25px;">AVAILABLE PICKUP TIMES</h2>
+          <div style="margin-bottom: 55px;">
+            <h2 style="margin-bottom: 25px;">AVAILABLE TIMES</h2>
             <div id="pizzaTimes"></div>
           </div>
           
-
-
-            <h2 id="checkout-warning" class="welcome"><i>Add a pizza and select a time</i></h2>
-
             <button type="submit" id="submit" disabled>ORDER NOW</button>
           </form>
         </section>
