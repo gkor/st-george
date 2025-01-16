@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stripe Checkout Sample</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <script src="./success.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="sr-root">
+      <div class="sr-main">
+
+        <div class="sr-payment-summary completed-view">
+          <h1>We got your order <span id="name"></span>!</h1>
+          <h2>Order Details</h2>
+          <ul id="order-details"></ul>
+          <h3>
+            See you at <span id="pickup-time"></span> on Saturday!
+          </h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
