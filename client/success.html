@@ -6,6 +6,10 @@
 
     <title>Stripe Checkout Sample</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&display=swap" rel="stylesheet">
+
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/global.css" />
@@ -16,15 +20,22 @@
   <body>
     <div class="sr-root">
       <div class="sr-main">
-
-        <div class="sr-payment-summary completed-view">
-          <h1>We got your order <span id="name"></span>!</h1>
-          <h2>Order Details</h2>
-          <ul id="order-details"></ul>
-          <h3>
-            See you at <span id="pickup-time"></span> on Saturday!
-          </h3>
-        </div>
+        <section class="container">
+          <img
+            src="https://bit.ly/3Wkio9K"
+            width="413"
+            height="256"
+            style="margin-bottom: 40px;"
+          />
+          <div class="sr-payment-summary completed-view">
+            <h1 style="margin-bottom: 40px !important;">We got your order <span id="name"></span>!</h1>
+            <h2 style="text-align: center; margin-top: 14px;"><u>Order Details</u></h2>
+            <ul id="order-details" style="text-align: center; margin-bottom: 40px !important;""></ul>
+            <h2 style="text-align: center;">
+              See you at <b><span id="pickup-time" style="color: #d02525"></span></b> on Saturday!
+            </h2>
+          </div>
+          </section>
       </div>
     </div>
   </body>
